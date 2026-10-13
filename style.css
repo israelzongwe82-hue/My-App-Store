@@ -1,0 +1,739 @@
+/* =========================================
+   MY APP STORE
+   Design général de la boutique
+   Couleurs : vert, orange et blanc
+========================================= */
+
+:root {
+    --green: #13834b;
+    --green-dark: #075c32;
+    --green-light: #e9f7ef;
+    --orange: #ff941f;
+    --orange-dark: #e77b08;
+    --white: #ffffff;
+    --background: #f7faf8;
+    --text: #202b24;
+    --muted: #65736a;
+    --border: #e0e9e2;
+    --shadow: 0 12px 35px rgba(15, 70, 38, 0.09);
+    --radius: 20px;
+}
+
+/* Réinitialisation */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+    min-width: 320px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 4px;
+}
+
+/* =========================================
+   EN-TÊTE
+========================================= */
+
+.header {
+    width: 100%;
+    min-height: 82px;
+    padding: 14px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--green-dark);
+    font-size: 1.35rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 26px;
+}
+
+.navigation a {
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.navigation a:hover {
+    color: var(--green);
+}
+
+.menu-button {
+    display: none;
+    border: none;
+    background: var(--green-light);
+    color: var(--green-dark);
+    border-radius: 10px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* =========================================
+   BOUTONS
+========================================= */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 22px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-align: center;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.button:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    background: var(--green);
+    color: var(--white);
+    box-shadow: 0 8px 20px rgba(19, 131, 75, 0.18);
+}
+
+.button-primary:hover {
+    background: var(--green-dark);
+}
+
+.button-secondary {
+    background: var(--white);
+    color: var(--green-dark);
+    border-color: var(--border);
+    width: 100%;
+}
+
+.button:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   SECTION D'ACCUEIL
+========================================= */
+
+.hero {
+    max-width: 1440px;
+    min-height: 490px;
+    margin: 0 auto;
+    padding: 75px 8%;
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    align-items: center;
+    gap: 60px;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(255, 148, 31, 0.15),
+            transparent 30%
+        ),
+        linear-gradient(135deg, #f0faf3, #ffffff 65%);
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--green-light);
+    color: var(--green-dark);
+    padding: 7px 15px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 4.5vw, 4rem);
+    line-height: 1.16;
+    letter-spacing: -1.5px;
+    margin-bottom: 24px;
+}
+
+.hero h1 span {
+    color: var(--green);
+}
+
+.hero-content > p:not(.hero-note) {
+    color: var(--muted);
+    font-size: 1.08rem;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.hero-note {
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: min(100%, 330px);
+    aspect-ratio: 1;
+    object-fit: contain;
+    filter: drop-shadow(0 25px 35px rgba(15, 70, 38, 0.12));
+}
+
+/* =========================================
+   CARTES DE PRÉSENTATION
+========================================= */
+
+.features {
+    max-width: 1250px;
+    margin: -20px auto 0;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    position: relative;
+    z-index: 2;
+}
+
+.feature {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+}
+
+.feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    margin-bottom: 16px;
+    background: var(--green-light);
+    border-radius: 15px;
+    font-size: 1.7rem;
+}
+
+.feature h3 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.feature p {
+    color: var(--muted);
+    font-size: 0.93rem;
+}
+
+/* =========================================
+   SECTIONS GÉNÉRALES
+========================================= */
+
+.section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 95px 6%;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 45px;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--orange-dark);
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.section-heading h2,
+.about-content h2 {
+    font-size: clamp(1.8rem, 3vw, 2.7rem);
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+
+.section-heading p,
+.about-content p {
+    color: var(--muted);
+}
+
+/* =========================================
+   APPLICATIONS
+========================================= */
+
+.applications {
+    padding-top: 100px;
+}
+
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.app-card {
+    display: grid;
+    grid-template-columns: 75px minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
+    background: var(--white);
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 5px 20px rgba(15, 70, 38, 0.04);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.app-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.app-card-icon {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: var(--green-light);
+    font-size: 2.3rem;
+}
+
+.app-category {
+    display: inline-block;
+    color: var(--orange-dark);
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.app-card h3 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.app-card-content > p {
+    color: var(--muted);
+    font-size: 0.93rem;
+    margin-bottom: 18px;
+}
+
+.availability {
+    display: block;
+    color: var(--muted);
+    font-size: 0.82rem;
+    margin-bottom: 12px;
+}
+
+.section-note {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 30px;
+}
+
+/* =========================================
+   À PROPOS
+========================================= */
+
+.about {
+    display: grid;
+    grid-template-columns: 0.65fr 1.35fr;
+    align-items: center;
+    gap: 65px;
+    background: var(--white);
+    border-radius: 30px;
+    margin-bottom: 60px;
+}
+
+.about-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background: var(--green-light);
+    border-radius: 28px;
+}
+
+.about-icon img {
+    width: min(100%, 250px);
+    aspect-ratio: 1;
+    object-fit: contain;
+}
+
+.about-content p {
+    margin-bottom: 16px;
+}
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+.contact h2 {
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    margin-bottom: 14px;
+}
+
+.contact > p {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+.contact-status {
+    display: inline-block;
+    background: #fff2df;
+    color: #92500b;
+    padding: 9px 16px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   PIED DE PAGE
+========================================= */
+
+.footer {
+    padding: 45px 6%;
+    background: #103b27;
+    color: var(--white);
+    text-align: center;
+}
+
+.footer-brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.footer-brand img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: var(--white);
+}
+
+.footer > p {
+    color: #d5e6db;
+    font-size: 0.9rem;
+}
+
+.copyright {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================
+   TABLETTES
+========================================= */
+
+@media (max-width: 950px) {
+    .header {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .navigation {
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 60px 6%;
+        gap: 30px;
+    }
+
+    .features {
+        gap: 14px;
+        padding: 0 20px;
+    }
+
+    .feature {
+        padding: 22px;
+    }
+
+    .app-card {
+        grid-template-columns: 60px minmax(0, 1fr);
+        gap: 16px;
+        padding: 22px;
+    }
+
+    .app-card-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.9rem;
+    }
+
+    .about {
+        gap: 35px;
+    }
+}
+
+/* =========================================
+   TÉLÉPHONES
+========================================= */
+
+@media (max-width: 700px) {
+    .header {
+        min-height: 72px;
+        padding: 10px 5%;
+    }
+
+    .brand {
+        font-size: 1.1rem;
+        gap: 9px;
+    }
+
+    .logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .menu-button {
+        display: block;
+        flex-shrink: 0;
+    }
+
+    .navigation {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 15px 5% 22px;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .navigation.open {
+        display: flex;
+    }
+
+    .navigation a {
+        display: block;
+        padding: 12px 8px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .navigation a:last-child {
+        border-bottom: none;
+    }
+
+    .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        padding: 55px 6% 65px;
+        gap: 35px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 9vw, 3rem);
+        letter-spacing: -0.8px;
+    }
+
+    .hero-content > p:not(.hero-note) {
+        font-size: 1rem;
+    }
+
+    .hero-image img {
+        width: min(65%, 230px);
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        margin-top: 25px;
+        padding: 0 5%;
+    }
+
+    .feature {
+        padding: 24px;
+    }
+
+    .section {
+        padding: 70px 5%;
+    }
+
+    .section-heading {
+        margin-bottom: 32px;
+    }
+
+    .app-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .app-card {
+        grid-template-columns: 55px minmax(0, 1fr);
+        gap: 14px;
+        padding: 20px;
+    }
+
+    .app-card-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 1.7rem;
+        border-radius: 15px;
+    }
+
+    .app-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        margin: 0 4% 30px;
+        padding: 45px 6%;
+        border-radius: 22px;
+    }
+
+    .about-icon img {
+        width: min(65%, 190px);
+    }
+
+    .contact {
+        padding-top: 45px;
+        padding-bottom: 60px;
+    }
+
+    .footer {
+        padding: 38px 5%;
+    }
+}
+
+/* =========================================
+   PETITS TÉLÉPHONES
+========================================= */
+
+@media (max-width: 380px) {
+    .brand {
+        font-size: 0.98rem;
+    }
+
+    .logo {
+        width: 36px;
+        height: 36px;
+    }
+
+    .hero h1 {
+        font-size: 1.9rem;
+    }
+
+    .app-card {
+        grid-template-columns: 1fr;
+    }
+
+    .app-card-icon {
+        width: 58px;
+        height: 58px;
+    }
+
+    .button {
+        width: 100%;
+    }
+}
+
+/* Réduire les animations si l'utilisateur le préfère */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

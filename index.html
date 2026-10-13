@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My App Store — Votre univers d'applications</title>
+
+    <meta name="description"
+          content="Bienvenue sur My App Store. Découvrez nos applications Android et Windows.">
+
+    <meta name="theme-color" content="#12804a">
+
+    <link rel="icon" type="image/png"
+          href="images/my_app_store_icon.png">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="index.html" class="brand">
+            <img
+                src="images/my_app_store_icon.png"
+                alt="Logo My App Store"
+                class="logo"
+            >
+
+            <span>My App Store</span>
+        </a>
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="navigation"
+        >
+            ☰
+        </button>
+
+        <nav class="navigation" id="navigation">
+            <a href="#accueil">Accueil</a>
+            <a href="#applications">Applications</a>
+            <a href="#apropos">À propos</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero" id="accueil">
+
+            <div class="hero-content">
+
+                <span class="badge">
+                    Bienvenue sur My App Store
+                </span>
+
+                <h1>
+                    Découvrez vos prochaines
+                    <span>applications préférées.</span>
+                </h1>
+
+                <p>
+                    Explorez notre univers d'applications,
+                    découvrez de nouveaux outils et retrouvez
+                    facilement les applications qui vous intéressent.
+                </p>
+
+                <a href="#applications" class="button button-primary">
+                    Découvrir les applications
+                </a>
+
+                <p class="hero-note">
+                    Android et Windows · Une boutique accessible en ligne
+                </p>
+
+            </div>
+
+            <div class="hero-image">
+                <img
+                    src="images/my_app_store_icon.png"
+                    alt="My App Store"
+                >
+            </div>
+
+        </section>
+
+        <section class="features">
+
+            <article class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>Applications Android</h3>
+                <p>
+                    Retrouvez les applications Android
+                    disponibles au téléchargement.
+                </p>
+            </article>
+
+            <article class="feature">
+                <div class="feature-icon">💻</div>
+                <h3>Applications Windows</h3>
+                <p>
+                    Découvrez les logiciels Windows
+                    lorsqu'une version est disponible.
+                </p>
+            </article>
+
+            <article class="feature">
+                <div class="feature-icon">🌍</div>
+                <h3>Accessible en ligne</h3>
+                <p>
+                    Consultez notre boutique depuis
+                    un téléphone, une tablette ou un ordinateur.
+                </p>
+            </article>
+
+        </section>
+
+        <section class="applications section" id="applications">
+
+            <div class="section-heading">
+                <span class="eyebrow">NOTRE COLLECTION</span>
+
+                <h2>Découvrez nos applications</h2>
+
+                <p>
+                    Explorez les projets proposés par My App Store.
+                </p>
+            </div>
+
+            <div class="app-grid">
+
+                <article class="app-card">
+                    <div class="app-card-icon">🤖</div>
+
+                    <div class="app-card-content">
+                        <span class="app-category">Intelligence artificielle</span>
+
+                        <h3>Israël_AI</h3>
+
+                        <p>
+                            Un assistant intelligent conçu pour
+                            vous aider à poser des questions,
+                            apprendre et obtenir des explications.
+                        </p>
+
+                        <span class="availability">
+                            Version à ajouter
+                        </span>
+
+                        <button
+                            class="button button-secondary"
+                            disabled
+                        >
+                            Bientôt disponible
+                        </button>
+                    </div>
+                </article>
+
+                <article class="app-card">
+                    <div class="app-card-icon">💻</div>
+
+                    <div class="app-card-content">
+                        <span class="app-category">Éducation</span>
+
+                        <h3>Le Guide de l'ordinateur</h3>
+
+                        <p>
+                            Apprenez à utiliser un ordinateur
+                            grâce à des leçons progressives
+                            et des explications pour débutants.
+                        </p>
+
+                        <span class="availability">
+                            Version à ajouter
+                        </span>
+
+                        <button
+                            class="button button-secondary"
+                            disabled
+                        >
+                            Bientôt disponible
+                        </button>
+                    </div>
+                </article>
+
+                <article class="app-card">
+                    <div class="app-card-icon">📊</div>
+
+                    <div class="app-card-content">
+                        <span class="app-category">Productivité</span>
+
+                        <h3>My Business</h3>
+
+                        <p>
+                            Un outil destiné à vous aider
+                            à organiser et à gérer votre activité
+                            commerciale.
+                        </p>
+
+                        <span class="availability">
+                            Version à ajouter
+                        </span>
+
+                        <button
+                            class="button button-secondary"
+                            disabled
+                        >
+                            Bientôt disponible
+                        </button>
+                    </div>
+                </article>
+
+                <article class="app-card">
+                    <div class="app-card-icon">🎵</div>
+
+                    <div class="app-card-content">
+                        <span class="app-category">Musique</span>
+
+                        <h3>Chansons d'Amour</h3>
+
+                        <p>
+                            Retrouvez un univers musical consacré
+                            aux chansons d'amour et aux émotions.
+                        </p>
+
+                        <span class="availability">
+                            Version à ajouter
+                        </span>
+
+                        <button
+                            class="button button-secondary"
+                            disabled
+                        >
+                            Bientôt disponible
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="section-note">
+                Les téléchargements seront activés après
+                l'ajout et la vérification des fichiers.
+            </p>
+
+        </section>
+
+        <section class="about section" id="apropos">
+
+            <div class="about-icon">
+                <img
+                    src="images/my_app_store_icon.png"
+                    alt="Logo My App Store"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="about-content">
+                <span class="eyebrow">NOTRE MISSION</span>
+
+                <h2>Bienvenue dans notre univers numérique</h2>
+
+                <p>
+                    My App Store est un projet destiné à rassembler
+                    et à présenter des applications dans une boutique
+                    simple à utiliser.
+                </p>
+
+                <p>
+                    Notre ambition est de rendre les outils numériques
+                    plus faciles à découvrir et à utiliser.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="contact section" id="contact">
+
+            <h2>Une question ou une suggestion ?</h2>
+
+            <p>
+                Vous pourrez nous contacter ici lorsque
+                notre adresse de contact sera configurée.
+            </p>
+
+            <span class="contact-status">
+                Informations de contact à venir
+            </span>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <a href="#accueil" class="footer-brand">
+            <img
+                src="images/my_app_store_icon.png"
+                alt=""
+                loading="lazy"
+            >
+            <span>My App Store</span>
+        </a>
+
+        <p>
+            Découvrez, explorez et profitez de vos applications.
+        </p>
+
+        <p class="copyright">
+            © <span id="currentYear">2026</span> My App Store.
+            Tous droits réservés.
+        </p>
+
+    </footer>
+
+</body>
+</html>
